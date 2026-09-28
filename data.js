@@ -57,8 +57,7 @@ export const portfolioData = {
             title: "Software Engineer",
             role: "Pathlock",
             type: "Full-time",
-            description:
-                "On-site · Sahibzada Ajit Singh Nagar, Punjab, India",
+            description: "On-site · Sahibzada Ajit Singh Nagar, Punjab, India",
         },
         {
             period: "May 2024 — Jul 2024",
@@ -97,7 +96,8 @@ export const portfolioData = {
             title: "Punjab Engineering College",
             role: "Bachelor of Technology · Electrical",
             type: "Degree",
-            description: "Activities and societies: Student Counseling Cell (SCC-PEC).",
+            description:
+                "Activities and societies: Student Counseling Cell (SCC-PEC).",
         },
         {
             period: "Apr 2019 — Jul 2021",

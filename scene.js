@@ -1,6 +1,8 @@
 import * as THREE from "three";
 
-const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+const reducedMotionQuery = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+);
 
 function createSky() {
     const geometry = new THREE.PlaneGeometry(42, 24, 1, 32);
@@ -11,10 +13,15 @@ function createSky() {
     const bottom = new THREE.Color("#ffe3b6");
 
     for (let index = 0; index < position.count; index += 1) {
-        const progress = THREE.MathUtils.clamp((position.getY(index) + 12) / 24, 0, 1);
-        const color = progress < 0.58
-            ? bottom.clone().lerp(middle, progress / 0.58)
-            : middle.clone().lerp(top, (progress - 0.58) / 0.42);
+        const progress = THREE.MathUtils.clamp(
+            (position.getY(index) + 12) / 24,
+            0,
+            1,
+        );
+        const color =
+            progress < 0.58
+                ? bottom.clone().lerp(middle, progress / 0.58)
+                : middle.clone().lerp(top, (progress - 0.58) / 0.42);
         colors.push(color.r, color.g, color.b);
     }
 
@@ -236,7 +243,10 @@ export function initHeroScene({ canvas, pauseButton }) {
     const onPointerMove = (event) => {
         const bounds = canvas.getBoundingClientRect();
         targetOffset.x = ((event.clientX - bounds.left) / bounds.width) * 2 - 1;
-        targetOffset.y = -(((event.clientY - bounds.top) / bounds.height) * 2 - 1);
+        targetOffset.y = -(
+            ((event.clientY - bounds.top) / bounds.height) * 2 -
+            1
+        );
         if (paused) {
             landscape.position.x = -targetOffset.x * 0.12;
             renderer.render(scene, camera);
@@ -278,8 +288,10 @@ export function initHeroScene({ canvas, pauseButton }) {
 
         if (!paused && !document.hidden) {
             elapsed += delta;
-            landscape.position.x += (-targetOffset.x * 0.12 - landscape.position.x) * delta * 1.6;
-            landscape.position.y += (-targetOffset.y * 0.055 - landscape.position.y) * delta * 1.4;
+            landscape.position.x +=
+                (-targetOffset.x * 0.12 - landscape.position.x) * delta * 1.6;
+            landscape.position.y +=
+                (-targetOffset.y * 0.055 - landscape.position.y) * delta * 1.4;
             sun.position.y = sunBaseY + Math.sin(elapsed * 0.42) * 0.045;
             glow.position.y = sun.position.y + 0.05;
             sunRim.rotation.z += delta * 0.018;

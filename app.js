@@ -3,14 +3,16 @@ import { portfolioData } from "./data.js";
 import { initHeroScene } from "./scene.js";
 
 const escapeHtml = (value) =>
-    String(value).replace(/[&<>"']/g, (character) =>
-        ({
-            "&": "&amp;",
-            "<": "&lt;",
-            ">": "&gt;",
-            '"': "&quot;",
-            "'": "&#39;",
-        })[character],
+    String(value).replace(
+        /[&<>"']/g,
+        (character) =>
+            ({
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': "&quot;",
+                "'": "&#39;",
+            })[character],
     );
 
 const safeExternalUrl = (value) => {
@@ -92,9 +94,10 @@ const renderTimeline = (items) =>
 document.querySelector("#experience-list").innerHTML = renderTimeline(
     portfolioData.experience,
 );
-document.querySelector("#achievement-list").innerHTML = portfolioData.achievements
+document.querySelector("#achievement-list").innerHTML =
+    portfolioData.achievements
         .map(
-                (achievement) => `
+            (achievement) => `
                         <article class="achievement-feature reveal">
                             <div class="achievement-scale"><strong>${escapeHtml(achievement.scale)}</strong><span>${escapeHtml(achievement.scaleLabel)}</span></div>
                             <div class="achievement-copy">
