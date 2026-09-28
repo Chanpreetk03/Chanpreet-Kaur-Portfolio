@@ -173,6 +173,62 @@ button {
     opacity: 0.12;
     transform: rotate(-13deg);
 }
+.hero-photo-collage {
+    position: absolute;
+    z-index: 2;
+    top: 17%;
+    right: calc(var(--gutter) + 84px);
+    display: block;
+    width: min(33vw, 380px);
+    height: 59%;
+    padding: 8px;
+    border: 1px solid rgb(255 250 246 / 84%);
+    background: rgb(255 250 246 / 76%);
+    box-shadow: 0 24px 68px rgb(91 54 66 / 18%);
+    transform: rotate(2deg);
+    backdrop-filter: blur(3px);
+}
+.hero-photo {
+    position: relative;
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+    overflow: hidden;
+    background: var(--paper-deep);
+}
+.hero-photo-main {
+    width: 100%;
+    height: 100%;
+}
+.hero-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: saturate(0.82);
+    transition:
+        filter 0.35s ease,
+        transform 0.6s ease;
+}
+.hero-photo-collage:hover .hero-photo img {
+    filter: saturate(1);
+}
+.hero-photo-collage:hover .hero-photo-main img {
+    transform: scale(1.035);
+}
+.hero-photo figcaption {
+    position: absolute;
+    right: 7px;
+    bottom: 7px;
+    display: grid;
+    width: 21px;
+    aspect-ratio: 1;
+    place-items: center;
+    background: var(--paper);
+    color: var(--ink);
+    font: 8px var(--mono);
+}
 .hero-copy {
     position: relative;
     z-index: 1;
@@ -319,6 +375,82 @@ button {
     overflow: hidden;
     border-block: 1px solid var(--ink);
     background: var(--acid);
+}
+.floral-backdrop {
+    position: relative;
+    isolation: isolate;
+}
+.floral-backdrop::after {
+    position: absolute;
+    z-index: -1;
+    top: var(--flower-top, 50%);
+    right: var(--flower-right, 4%);
+    width: var(--flower-width, 180px);
+    height: var(--flower-height, 270px);
+    background-color: var(--flower-color, #bf7880);
+    content: "";
+    opacity: var(--flower-opacity, 0.09);
+    pointer-events: none;
+    transform: translateY(-50%) rotate(var(--flower-rotation, 0deg));
+    -webkit-mask: url("/images/botanical-mask.svg") center / contain no-repeat;
+    mask: url("/images/botanical-mask.svg") center / contain no-repeat;
+}
+.floral-ribbon {
+    --flower-top: 50%;
+    --flower-right: 14%;
+    --flower-width: 34px;
+    --flower-height: 52px;
+    --flower-color: #b95e63;
+    --flower-opacity: 0.18;
+}
+.floral-work {
+    --flower-top: 42%;
+    --flower-right: 1%;
+    --flower-width: 132px;
+    --flower-height: 198px;
+    --flower-opacity: 0.045;
+    --flower-rotation: -7deg;
+}
+.floral-experience {
+    --flower-top: 58%;
+    --flower-right: 5%;
+    --flower-width: 170px;
+    --flower-height: 255px;
+    --flower-color: #ffd4bd;
+    --flower-opacity: 0.14;
+    --flower-rotation: 8deg;
+}
+.floral-achievements {
+    --flower-top: 52%;
+    --flower-right: 2%;
+    --flower-width: 150px;
+    --flower-height: 225px;
+    --flower-opacity: 0.075;
+    --flower-rotation: -9deg;
+}
+.floral-education {
+    --flower-top: 58%;
+    --flower-right: 3%;
+    --flower-width: 140px;
+    --flower-height: 210px;
+    --flower-opacity: 0.09;
+    --flower-rotation: 5deg;
+}
+.floral-about {
+    --flower-top: 48%;
+    --flower-right: 4%;
+    --flower-width: 165px;
+    --flower-height: 248px;
+    --flower-opacity: 0.1;
+    --flower-rotation: -6deg;
+}
+.floral-contact {
+    --flower-top: 52%;
+    --flower-right: 5%;
+    --flower-width: 150px;
+    --flower-height: 225px;
+    --flower-opacity: 0.09;
+    --flower-rotation: 9deg;
 }
 .signal-track {
     display: flex;
@@ -1176,6 +1308,22 @@ button {
     transition-delay: 0.15s;
 }
 
+@media (max-width: 1320px) and (min-width: 901px) {
+    :root {
+        --gutter: 48px;
+    }
+    .hero-copy {
+        width: min(56%, 520px);
+    }
+    .hero h1 {
+        font-size: clamp(82px, 9.2vw, 100px);
+    }
+    .hero-photo-collage {
+        right: calc(var(--gutter) + 80px);
+        width: min(27vw, 300px);
+    }
+}
+
 @media (max-width: 900px) {
     :root {
         --gutter: 36px;
@@ -1199,10 +1347,35 @@ button {
         right: 5%;
         height: 68%;
     }
+    .hero-photo-collage {
+        top: 27%;
+        right: calc(var(--gutter) + 68px);
+        width: min(22vw, 200px);
+        height: 42%;
+        padding: 6px;
+    }
     .work-botanical {
         right: 0;
         width: 112px;
         opacity: 0.14;
+    }
+    .floral-work {
+        --flower-width: 105px;
+        --flower-height: 158px;
+        --flower-opacity: 0.035;
+    }
+    .floral-experience {
+        --flower-width: 135px;
+        --flower-height: 203px;
+        --flower-opacity: 0.11;
+    }
+    .floral-achievements,
+    .floral-education,
+    .floral-about,
+    .floral-contact {
+        --flower-width: 120px;
+        --flower-height: 180px;
+        --flower-opacity: 0.075;
     }
     .project-card.featured {
         grid-template-columns: 1fr;
@@ -1292,6 +1465,51 @@ button {
         left: -44px;
         width: 110px;
         height: 130px;
+    }
+    .hero-photo-collage {
+        top: auto;
+        right: auto;
+        bottom: 82px;
+        left: 22px;
+        width: min(58%, 250px);
+        height: 22%;
+        padding: 5px;
+        transform: rotate(-1deg);
+    }
+    .hero-photo figcaption {
+        right: 4px;
+        bottom: 4px;
+        width: 17px;
+        font-size: 7px;
+    }
+    .floral-ribbon {
+        --flower-right: 8%;
+        --flower-width: 28px;
+        --flower-height: 42px;
+        --flower-opacity: 0.14;
+    }
+    .floral-work {
+        --flower-top: 32%;
+        --flower-right: 0;
+        --flower-width: 68px;
+        --flower-height: 102px;
+        --flower-opacity: 0.035;
+    }
+    .floral-experience {
+        --flower-top: 52%;
+        --flower-right: 0;
+        --flower-width: 100px;
+        --flower-height: 150px;
+        --flower-opacity: 0.09;
+    }
+    .floral-achievements,
+    .floral-education,
+    .floral-about,
+    .floral-contact {
+        --flower-right: -5%;
+        --flower-width: 85px;
+        --flower-height: 128px;
+        --flower-opacity: 0.06;
     }
     .hero-copy {
         width: 100%;
