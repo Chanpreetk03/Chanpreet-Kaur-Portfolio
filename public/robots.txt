@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chanpreetk03.github.io/Chanpreet-Kaur-Portfolio/sitemap.xml

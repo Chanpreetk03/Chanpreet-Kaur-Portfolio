@@ -1,0 +1,38 @@
+# Chanpreet Kaur
+
+> Software engineer at Pathlock, Punjab Engineering College graduate, and builder of developer tools and web experiences.
+
+This is the official portfolio of Chanpreet Kaur. The site is a single-page portfolio; section links below point to the corresponding content.
+
+## Profile
+
+- Current role: Software Engineer at Pathlock, since October 2025.
+- Education: Bachelor of Technology in Electrical Engineering, Punjab Engineering College (December 2021 to September 2025).
+- Location: Sahibzada Ajit Singh Nagar, Punjab, India.
+- LinkedIn: https://www.linkedin.com/in/chanpreet-kaur-a6974922b/
+- GitHub: https://github.com/Chanpreetk03
+
+## Selected projects
+
+- Codex Rollout Insights: local-first VS Code extension for inspecting Codex session usage and repository trends. Source: https://github.com/Chanpreetk03/Codex-Credits-Overview
+- Open Authentication & Security Research Platform: interactive OAuth, JWT, and SAML security learning labs. Source: https://github.com/Chanpreetk03/Open-Authentication-Security-Research-Platform
+- AI-DJ: crowd-reactive music experience using local audience signals and realtime room state. Source: https://github.com/Chanpreetk03/AI-DJ
+
+## Experience
+
+- Software Engineer, Pathlock (October 2025 to present).
+- Software Engineer Intern, Microsoft (May 2024 to July 2024); developed a DRI chatbot that suggests mitigation steps.
+- Full Stack Developer Intern, Bizdisere (January 2024 to April 2024); worked with ReactJS and NodeJS.
+
+## Achievement
+
+Team winner of the 2025 ServiceNow Women Code to Win challenge. More than 18,000 people registered.
+
+## Education
+
+- Punjab Engineering College, Bachelor of Technology in Electrical Engineering (2021 to 2025).
+- Shri Guru Harkrishan Public Senior Secondary School, High School Non Medical; grade 94% (2019 to 2021).
+
+## Canonical portfolio
+
+https://chanpreetk03.github.io/Chanpreet-Kaur-Portfolio/
