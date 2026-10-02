@@ -81,12 +81,27 @@
           <a href="#about">About</a>
           <a class="nav-contact" href="#contact">Let's talk <span aria-hidden="true">↗</span></a>
         </nav>
+        <aside class="day-clock" aria-label="Day timeline and chapter navigation">
+          <div class="clock-readout">
+            <span class="clock-face" aria-hidden="true"><i class="clock-hour-hand"></i><i class="clock-minute-hand"></i><b></b></span>
+            <span class="clock-copy" aria-live="polite" aria-atomic="true"><time id="chapter-time" datetime="06:00">06:00</time><span id="chapter-phase">Sunrise</span></span>
+          </div>
+          <nav class="chapter-dots" aria-label="Jump to a time of day">
+            <a href="#top" data-chapter-link="sunrise" aria-label="Go to sunrise chapter" aria-current="location"><span></span></a>
+            <a href="#work" data-chapter-link="noon" aria-label="Go to noon chapter"><span></span></a>
+            <a href="#evening" data-chapter-link="evening" aria-label="Go to evening chapter"><span></span></a>
+            <a href="#night" data-chapter-link="night" aria-label="Go to night chapter"><span></span></a>
+          </nav>
+        </aside>
       </header>
 
-      <main id="top">
-        <section class="hero" aria-labelledby="hero-title">
+      <main class="day-journey" id="journey">
+        <section class="hero day-scene day-scene-sunrise" id="top" data-day="sunrise" aria-labelledby="hero-title">
           <canvas id="hero-canvas" aria-label="Animated sunrise over layered hills"></canvas>
           <div class="hero-wash" aria-hidden="true"></div>
+          <span class="sunrise-bird" aria-hidden="true">
+            <svg viewBox="0 0 72 30" fill="none"><path d="M35 19C25 7 15 7 3 14"/><path d="M37 19C47 7 57 7 69 14"/></svg>
+          </span>
           <div class="botanical-art" aria-hidden="true">
             <svg class="botanical-sprig" viewBox="0 0 280 500" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g class="botanical-strokes">
@@ -139,15 +154,15 @@
             <span class="pause-icon" aria-hidden="true">Ⅱ</span>
           </button>
           <a class="scroll-cue" href="#work"><span>SCROLL TO EXPLORE</span><span aria-hidden="true">↓</span></a>
+          <div class="signal-strip floral-backdrop floral-ribbon" aria-label="Interests">
+            <div class="signal-track" aria-hidden="true">
+            <span>PRODUCT ENGINEERING</span><i>✳</i><span>CREATIVE TECHNOLOGY</span><i>✳</i><span>USEFUL BY DESIGN</span><i>✳</i><span>OPEN SOURCE</span><i>✳</i><span>PRODUCT ENGINEERING</span><i>✳</i><span>CREATIVE TECHNOLOGY</span><i>✳</i><span>USEFUL BY DESIGN</span><i>✳</i><span>OPEN SOURCE</span><i>✳</i>
+            </div>
+          </div>
         </section>
 
-        <div class="signal-strip floral-backdrop floral-ribbon" aria-label="Interests">
-          <div class="signal-track" aria-hidden="true">
-            <span>PRODUCT ENGINEERING</span><i>✳</i><span>CREATIVE TECHNOLOGY</span><i>✳</i><span>USEFUL BY DESIGN</span><i>✳</i><span>OPEN SOURCE</span><i>✳</i><span>PRODUCT ENGINEERING</span><i>✳</i><span>CREATIVE TECHNOLOGY</span><i>✳</i><span>USEFUL BY DESIGN</span><i>✳</i><span>OPEN SOURCE</span><i>✳</i>
-          </div>
-        </div>
-
-        <section class="work-section section-wrap floral-backdrop floral-work" id="work" aria-labelledby="work-title">
+        <section class="work-section day-scene day-scene-noon floral-backdrop floral-work" id="work" data-day="noon" aria-labelledby="work-title">
+          <div class="scene-atmosphere noon-atmosphere" aria-hidden="true"><canvas class="scene-canvas" data-scene="noon"></canvas><canvas class="scene-canvas scene-motion-canvas" data-motion="noon"></canvas><div class="noon-sunbeam"></div><div class="ambient-particles"></div></div>
           <div class="work-botanical" aria-hidden="true">
             <svg viewBox="0 0 210 280" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g class="botanical-strokes">
@@ -172,59 +187,61 @@
           <a class="all-work-link" href="https://github.com/Chanpreetk03?tab=repositories" target="_blank" rel="noreferrer">MORE EXPERIMENTS ON GITHUB <span aria-hidden="true">↗</span></a>
         </section>
 
-        <section class="experience-section floral-backdrop floral-experience" id="experience" aria-labelledby="experience-title">
-          <div class="section-wrap experience-inner">
-            <div class="section-topline"><p class="eyebrow"><span>02</span> THE WORK SO FAR</p><span class="section-side-note">BUILDING, LEARNING, REPEATING</span></div>
-            <div class="section-title-row">
-              <h2 id="experience-title">A little<br /><em>experience.</em></h2>
-              <p class="section-intro">Different teams, different problems. Always something new to learn.</p>
+        <section class="day-scene day-scene-evening experience-section floral-backdrop floral-experience" id="evening" data-day="evening" aria-label="Evening: experience, achievement, and education">
+          <div class="scene-atmosphere evening-atmosphere" aria-hidden="true"><canvas class="scene-canvas" data-scene="evening"></canvas><canvas class="scene-canvas scene-motion-canvas" data-motion="evening"></canvas><div class="ambient-particles"></div></div>
+          <div class="chapter-shell evening-layout">
+            <section class="evening-career" id="experience" aria-labelledby="experience-title">
+              <div class="chapter-kicker"><span>03 / EXPERIENCE</span><span>BUILDING, LEARNING, REPEATING</span></div>
+              <div class="evening-heading">
+                <h2 id="experience-title">The work<br /><em>so far.</em></h2>
+                <p>Different teams, different problems. Always something new to learn.</p>
+              </div>
+              <div class="timeline" id="experience-list" aria-live="polite"><!-- EXPERIENCE_LIST --></div>
+            </section>
+            <div class="evening-side">
+              <section class="evening-award" id="achievements" aria-labelledby="achievements-title">
+                <div class="chapter-kicker"><span>04 / ACHIEVEMENT</span><span>TEAM WIN</span></div>
+                <h2 class="visually-hidden" id="achievements-title">Achievements</h2>
+                <div class="achievement-content" id="achievement-list" aria-live="polite"><!-- ACHIEVEMENT_LIST --></div>
+              </section>
+              <section class="evening-education" id="education" aria-labelledby="education-title">
+                <div class="chapter-kicker"><span>05 / EDUCATION</span><span>THE FOUNDATIONS</span></div>
+                <h2 id="education-title">Where I learned.</h2>
+                <div class="timeline timeline-education" id="education-list" aria-live="polite"><!-- EDUCATION_LIST --></div>
+              </section>
             </div>
-            <div class="timeline" id="experience-list" aria-live="polite"><!-- EXPERIENCE_LIST --></div>
           </div>
         </section>
 
-        <section class="achievement-section section-wrap floral-backdrop floral-achievements" id="achievements" aria-labelledby="achievements-title">
-          <div class="section-topline"><p class="eyebrow"><span>03</span> ACHIEVEMENTS</p><span class="section-side-note">SERVICE, SKILL, AND TEAMWORK</span></div>
-          <h2 class="visually-hidden" id="achievements-title">Achievements</h2>
-          <div class="achievement-content" id="achievement-list" aria-live="polite"><!-- ACHIEVEMENT_LIST --></div>
-        </section>
-
-        <section class="education-section section-wrap floral-backdrop floral-education" aria-labelledby="education-title">
-          <div class="section-topline"><p class="eyebrow"><span>04</span> EDUCATION</p><span class="section-side-note">THE FOUNDATIONS</span></div>
-          <div class="education-layout">
-            <h2 id="education-title">Curiosity<br />has a <em>curriculum.</em></h2>
-            <div class="timeline timeline-education" id="education-list" aria-live="polite"><!-- EDUCATION_LIST --></div>
-          </div>
-        </section>
-
-        <section class="about-section floral-backdrop floral-about" id="about" aria-labelledby="about-title">
-          <div class="about-inner section-wrap">
-            <div class="about-index"><span>05</span><span>THE PERSON<br />BEHIND THE PIXELS</span></div>
-            <div class="about-copy">
-              <p class="eyebrow">A LITTLE ABOUT ME</p>
-              <h2 id="about-title">Engineer by training.<br /><em>Maker by instinct.</em></h2>
-              <p class="about-body">I'm a software engineer at Pathlock and a 2025 graduate of Punjab Engineering College. Before Pathlock, I interned at Microsoft and Bizdisere, building experience in incident-response tooling and full-stack development.</p>
-              <p class="about-body">Outside of work, I build developer tools and explore creative technology. I like getting close to the details, then making the result feel clear and approachable.</p>
-              <div class="skill-line"><span>IN MY TOOLKIT</span><p>TypeScript · JavaScript · React · Go · .NET · Node.js</p></div>
-            </div>
-            <div class="about-monogram" aria-hidden="true">CK<span>®</span></div>
-          </div>
-        </section>
-
-        <section class="contact-section section-wrap floral-backdrop floral-contact" id="contact" aria-labelledby="contact-title">
-          <div class="section-topline"><p class="eyebrow"><span>06</span> OPEN CHANNEL</p><span class="section-side-note">CURRENTLY AT PATHLOCK</span></div>
-          <div class="contact-content">
-            <h2 id="contact-title">Good things<br />start with a <em>hello.</em></h2>
-            <a class="contact-link" href="https://www.linkedin.com/in/chanpreet-kaur-a6974922b/" target="_blank" rel="noreferrer">Find me on LinkedIn <span aria-hidden="true">↗</span></a>
+        <section class="day-scene day-scene-night night-section" id="night" data-day="night" aria-label="Night: about Chanpreet and contact">
+          <div class="scene-atmosphere night-atmosphere" aria-hidden="true"><canvas class="scene-canvas" data-scene="night"></canvas><canvas class="scene-canvas scene-motion-canvas" data-motion="night"></canvas><div class="night-moon-glow"></div><div class="ambient-particles"></div></div>
+          <div class="chapter-shell night-layout">
+            <section class="about-section night-about floral-backdrop floral-about" id="about" aria-labelledby="about-title">
+              <div class="about-index"><span>06 / ABOUT</span><span>THE PERSON BEHIND THE PIXELS</span></div>
+              <div class="about-copy">
+                <p class="eyebrow">A LITTLE ABOUT ME</p>
+                <h2 id="about-title">Engineer by training.<br /><em>Maker by instinct.</em></h2>
+                <p class="about-body">I'm a software engineer at Pathlock and a 2025 graduate of Punjab Engineering College. Before Pathlock, I interned at Microsoft and Bizdisere, building experience in incident-response tooling and full-stack development.</p>
+                <p class="about-body">Outside of work, I build developer tools and explore creative technology. I like getting close to the details, then making the result feel clear and approachable.</p>
+                <div class="skill-line"><span>IN MY TOOLKIT</span><p>TypeScript · JavaScript · React · Go · .NET · Node.js</p></div>
+              </div>
+              <div class="about-monogram" aria-hidden="true">CK<span>®</span></div>
+            </section>
+            <section class="contact-section night-contact floral-backdrop floral-contact" id="contact" aria-labelledby="contact-title">
+              <div class="chapter-kicker"><span>07 / OPEN CHANNEL</span><span>CURRENTLY AT PATHLOCK</span></div>
+              <div class="contact-content">
+                <h2 id="contact-title">Good things<br />start with a <em>hello.</em></h2>
+                <a class="contact-link" href="https://www.linkedin.com/in/chanpreet-kaur-a6974922b/" target="_blank" rel="noreferrer">Find me on LinkedIn <span aria-hidden="true">↗</span></a>
+              </div>
+            </section>
+            <footer class="site-footer">
+              <span>© <span id="year"></span> CHANPREET KAUR</span>
+              <span>MADE WITH INTENTION <span class="footer-star">✳</span></span>
+              <a href="#top">BACK TO THE TOP ↑</a>
+            </footer>
           </div>
         </section>
       </main>
-
-      <footer class="site-footer">
-        <span>© <span id="year"></span> CHANPREET KAUR</span>
-        <span>MADE WITH INTENTION <span class="footer-star">✳</span></span>
-        <a href="#top">BACK TO THE TOP ↑</a>
-      </footer>
     </div>
     <script type="module" src="/app.js"></script>
   </body>

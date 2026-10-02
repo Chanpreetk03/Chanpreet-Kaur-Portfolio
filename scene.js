@@ -206,6 +206,15 @@ export function initHeroScene({ canvas, pauseButton }) {
     let disposed = false;
     let lastFrameTime = 0;
     let elapsed = 0;
+    const hero = canvas.closest(".hero");
+    hero?.classList.toggle("is-motion-paused", paused);
+
+    if (paused) {
+        pauseButton?.setAttribute("aria-label", "Resume scene animation");
+        pauseButton?.setAttribute("title", "Resume scene animation");
+        const icon = pauseButton?.querySelector(".pause-icon");
+        if (icon) icon.textContent = "▶";
+    }
 
     const updateLayout = () => {
         const width = canvas.clientWidth;
@@ -260,6 +269,7 @@ export function initHeroScene({ canvas, pauseButton }) {
 
     const onPauseToggle = () => {
         paused = !paused;
+        hero?.classList.toggle("is-motion-paused", paused);
         pauseButton?.setAttribute(
             "aria-label",
             paused ? "Resume scene animation" : "Pause scene animation",
